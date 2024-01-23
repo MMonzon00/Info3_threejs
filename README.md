@@ -49,20 +49,30 @@ Siga estos pasos para configurar y ejecutar el proyecto localmente:
 
 ## Estructura del Proyecto
 
-Descripción breve de la estructura de archivos y carpetas del proyecto.
+Este proyecto utiliza Blender para modelar el CyberTruck y Three.js para integrar y hacer interactiva la visualización del modelo 3D en un entorno web.
+
+- **`/models`**: Contiene los archivos del modelo 3D del CyberTruck creado con Blender.
+- **`/src`**: Directorio principal de código fuente de la aplicación Three.js.
+  - **`/src/components`**: Componentes de la aplicación.
+  - **`/src/scenes`**: Escenas de Three.js que contienen la lógica principal.
+  - **`/src/utils`**: Utilidades y funciones auxiliares.
+
+## Modelado del CyberTruck con Blender
+
+El modelo 3D del CyberTruck fue creado utilizando Blender. Los archivos resultantes se encuentran en el directorio `/models`. Si deseas realizar modificaciones al modelo, abre el archivo `.blend` en Blender y realiza las ediciones necesarias.
+
+## Integración con Three.js
+
+La integración del modelo en Three.js se realiza en el directorio `/src`. Puedes explorar y modificar los componentes y escenas para adaptar la interactividad según tus necesidades.
+
+## Comandos Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Construye la aplicación para producción.
 
 ## Contribuciones
 
-Siéntase libre de contribuir al proyecto. Para hacerlo, siga estos pasos:
-
-1. Fork del Repositorio
-2. Cree una Rama (`git checkout -b feature/AmazingFeature`)
-3. Realice los Cambios Necesarios
-4. Haga Commit de los Cambios (`git commit -m 'Agregar alguna funcionalidad increíble'`)
-5. Haga Push a la Rama (`git push origin feature/AmazingFeature`)
-6. Abra una Solicitud de Extracción
-
-¡Gracias por contribuir!
+¡Te animamos a contribuir al proyecto! Si tienes sugerencias, correcciones o nuevas características, sigue los pasos descritos en la sección de Contribuciones.
 
 ## Licencia
 
