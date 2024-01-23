@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Informatica 3, CyberTruck (Monzón)
 
 Descripción corta del proyecto.
 
