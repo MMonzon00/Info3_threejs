@@ -7,6 +7,7 @@ Trabajo de modelado del vehículo y importación a threejs donde se añadió int
 Asegúrese de tener instalado lo siguiente en su máquina:
 
 - Node.js: [Descargar Node.js](https://nodejs.org/)
+- NPX: NPX viene con Node.js, pero asegúrese de tener una versión actualizada.
 
 ## Configuración del Entorno
 
@@ -25,26 +26,17 @@ Siga estos pasos para configurar y ejecutar el proyecto localmente:
     npm install
     ```
 
-3. **Iniciar el Servidor de Desarrollo:**
+3. **Iniciar el Servidor de Desarrollo con Vite:**
 
     ```bash
-    npm run dev
+    npx create-vite
     ```
 
     Esto iniciará el servidor de desarrollo en `http://localhost:3000`. Abra este enlace en su navegador para ver la aplicación.
 
-4. **Construir la Aplicación para Producción:**
-
-    ```bash
-    npm run build
-    ```
-
-    Esto generará los archivos optimizados para producción en el directorio `dist`.
-
 ## Comandos Disponibles
 
-- `npm run dev`: Inicia el servidor de desarrollo.
-- `npm run build`: Construye la aplicación para producción.
+- `npm run dev`: Inicia el servidor de desarrollo con Vite.
 
 ## Estructura del Proyecto
 
