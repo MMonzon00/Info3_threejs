@@ -99,11 +99,6 @@ document.addEventListener('keyup', (event) => {
     keys.Space = false;
     cameraOffset = new THREE.Vector3(0, 20, -100);
   }
-
-  if (event.key === 'c') {
-    keys.c = false;
-    console.log("'c' key status:", keys.c);
-  }
 });
 
 const moveSpeed = 1;
@@ -139,19 +134,24 @@ function animate() {
 
   if (CyberTruck) {
     updateCyberTruck();
-
-    if (keys.Space) {
-      console.log("SPACE");
-      cameraOffset = new THREE.Vector3(0, 20, 100);
+    
+    let toggleFlag=true;
+    if(toggleFlag){
+      if (keys.Space) {
+        console.log("SPACE");
+        cameraOffset = new THREE.Vector3(0, 20, 100);
+      }
+      const rotatedOffset = cameraOffset.clone();
+      rotatedOffset.applyQuaternion(CyberTruck.quaternion);
+      const desiredPosition = CyberTruck.position.clone().add(rotatedOffset);
+      camera.position.lerp(desiredPosition, 0.1);
+      camera.lookAt(CyberTruck.position);
+      if(keys.cPressed){
+        toggleFlag=false;
+      }
     }
-
-    const rotatedOffset = cameraOffset.clone();
-    rotatedOffset.applyQuaternion(CyberTruck.quaternion);
-
-    const desiredPosition = CyberTruck.position.clone().add(rotatedOffset);
-
-    camera.position.lerp(desiredPosition, 0.1);
-    camera.lookAt(CyberTruck.position);
+    
+    
   }
 
   renderer.render(scene, camera);
