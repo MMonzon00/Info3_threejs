@@ -72,7 +72,7 @@ document.addEventListener('keydown', (event) => {
       cameraOffset = new THREE.Vector3(0, 20, -100);
     }
   
-    if (event.key === 'c') {
+    if (event.key === 'c' || event.key === 'C') {
       keys.cPressed = !keys.cPressed; // Toggle the 'c' key status
       console.log("'c' key status:", keys.cPressed);
   
