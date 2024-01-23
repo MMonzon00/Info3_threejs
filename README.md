@@ -13,30 +13,93 @@ Asegúrese de tener instalado lo siguiente en su máquina:
 
 Siga estos pasos para configurar y ejecutar el proyecto localmente:
 
-1. **Clonar el Repositorio:**
+1. Instalar curl:
+```
+sudo apt update && sudo apt upgrade
+```
+```
+sudo apt install curl
+```
 
-    ```bash
-    git clone https://github.com/MMonzon00/Info3_threejs
-    cd Info3_threejs
-    ```
+2. Verificar la instalacion ejecutando:
+```
+curl --version
+```
 
-2. **Instalar Dependencias:**
+3. Instalar el manejador de versiones de Node.js (nvm) por medio de curl
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
 
-    ```bash
-    npm install
-    ```
+4. Instalar Node.js y npm:
+```
+nvm install --lts
+```
 
-3. **Iniciar el Servidor de Desarrollo con Vite:**
+5.Verificar la instalacion ejecutando: 
+```
+node --version` y `npm --version`
+```
 
-    ```bash
-    npx create-vite
-    ```
 
-    Esto iniciará el servidor de desarrollo en `http://localhost:3000`. Abra este enlace en su navegador para ver la aplicación.
+6. Instalar git:
+```
+sudo apt-get install git
+```
 
-## Comandos Disponibles
 
-- `npm run dev`: Inicia el servidor de desarrollo con Vite.
+7. Verificar la instalacion ejecutando:
+```
+git --version
+```
+
+
+8. Clonar el repositorio e ir a la carpeta base:
+```
+git clone https://github.com/MMonzon00/Info3_threejs
+```
+```
+cd Info3_threejs
+```
+## Con npx vite:
+
+9. Instalacion de dependencias:
+```
+npm install
+```
+
+10. Ejecutar el proyecto:
+```
+npx vite
+```
+
+11. Visualizar el proyecto en el navegador yendo a la url: `http://localhost:5173/`
+
+
+## Con npm run dev:
+
+9. Instalacion de dependencias:
+```
+npm install
+```
+
+10. Ejecutar el proyecto:
+```
+npm run dev
+```
+
+11. Visualizar el proyecto en el navegador yendo a la url: `http://localhost:5173/`
+
+## Con npx serve (utilizando un CDN):
+
+9. Ejecutar el comando:
+```
+npx serve
+```
+
+10. Visualizar el proyecto en el navegador yendo a la url: `http://localhost:3000/`
+
+Esto iniciará el servidor de desarrollo en `http://localhost:3000`. Abra este enlace en su navegador para ver la aplicación.
 
 ## Estructura del Proyecto
 
@@ -50,7 +113,3 @@ Este proyecto utiliza Blender para modelar el CyberTruck y Three.js para integra
 - **`package-lock.json`**: Archivo de bloqueo de versiones de dependencias.
 - **`package.json`**: Archivo de configuración de Node.js y dependencias.
 - **`style.css`**: Estilos CSS para la aplicación.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - vea el archivo [LICENSE.md](LICENSE.md) para más detalles.
