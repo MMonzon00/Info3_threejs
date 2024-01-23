@@ -16,7 +16,7 @@ Siga estos pasos para configurar y ejecutar el proyecto localmente:
 1. **Clonar el Repositorio:**
 
     ```bash
-    https://github.com/MMonzon00/Info3_threejs
+    git clone https://github.com/MMonzon00/Info3_threejs
     cd Info3_threejs
     ```
 
