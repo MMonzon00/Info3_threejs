@@ -21,6 +21,7 @@ loader.load(
       CyberTruck.scale.set(7, 7, 7);
       CyberTruck.position.set(0, 0, 0);
       scene.add(CyberTruck);
+      setupGuiControls();
     },
     // ... (progress and error callbacks)
   );
@@ -104,30 +105,30 @@ document.addEventListener('keyup', (event) => {
 });
 
 
-const gui = new dat.GUI();
+function setupGuiControls() {
+    const gui = new dat.GUI();
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(0, 1, 0).normalize();
-scene.add(directionalLight);
+    // Add dat.GUI controls for CyberTruck
+    const cyberTruckFolder = gui.addFolder('CyberTruck Controls');
+    const cyberTruckPosition = cyberTruckFolder.addFolder('Position');
+    const cyberTruckRotation = cyberTruckFolder.addFolder('Rotation');
 
-// Directional Light controls
-const directionalLightFolder = gui.addFolder('Directional Light');
-directionalLightFolder.add(directionalLight.position, 'x', -1, 1).step(0.1).name('X Position');
-directionalLightFolder.add(directionalLight.position, 'y', -1, 1).step(0.1).name('Y Position');
-directionalLightFolder.add(directionalLight.position, 'z', -1, 1).step(0.1).name('Z Position');
-directionalLightFolder.add(directionalLight, 'intensity', 0, 2).step(0.1).name('Intensity');
-directionalLightFolder.addColor(directionalLight, 'color').name('Color');
-directionalLightFolder.open();
+    // Initial values
+    let initialPosition = { x: 0, y: 0, z: 0 };
 
-// Add dat.GUI controls for CyberTruck
-const cyberTruckFolder = gui.addFolder('CyberTruck Controls');
+    // Add position controls
+    cyberTruckPosition.add(CyberTruck.position, 'x', -100, 100).step(0.1).name('X').setValue(initialPosition.x);
+    cyberTruckPosition.add(CyberTruck.position, 'y', -100, 100).step(0.1).name('Y').setValue(initialPosition.y);
+    cyberTruckPosition.add(CyberTruck.position, 'z', -100, 100).step(0.1).name('Z').setValue(initialPosition.z);
 
-// Initial values
-let initialPosition = { x: 0, y: 0, z: 0 };
+    // Add rotation controls
+    // (Add your rotation controls here if needed)
 
-// // Add position controls
-cyberTruckFolder.add(CyberTruck.position.x, 'x', -100, 100).step(0.1).name('X').setValue(initialPosition.x);
-// cyberTruckFolder.add(CyberTruck.position, 'z', -100, 100).step(0.1).name('Z').setValue(initialPosition.z);
+    // Open the folders
+    cyberTruckFolder.open();
+    cyberTruckPosition.open();
+    cyberTruckRotation.open();
+}
 
 
 const controls = new OrbitControls(camera, renderer.domElement);
