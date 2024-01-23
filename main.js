@@ -4,15 +4,15 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
 const loader = new GLTFLoader();
-let myModel;
+let CyberTruck;
 let controls;
 
 loader.load(
   './models/cybertruckFinal.glb',
   function (gltf) {
-    myModel = gltf.scene;
-    myModel.scale.set(7, 7, 7);
-    scene.add(myModel);
+    CyberTruck = gltf.scene;
+    CyberTruck.scale.set(7, 7, 7);
+    scene.add(CyberTruck);
   }
 );
 
@@ -82,7 +82,7 @@ document.addEventListener('keydown', (event) => {
         controls.dampingFactor = 0.25;
         controls.screenSpacePanning = false;
         controls.maxPolarAngle = Math.PI / 2;
-        controls.target.copy(myModel.position);
+        controls.target.copy(CyberTruck.position);
       } else {
         controls.dispose();
         controls = null;
@@ -112,32 +112,32 @@ const rotateSpeed = 0.012;
 function updatemyModel() {
   if (keys.ArrowUp) {
     let direction = new THREE.Vector3();
-    myModel.getWorldDirection(direction);
-    myModel.position.addScaledVector(direction, moveSpeed);
+    CyberTruck.getWorldDirection(direction);
+    CyberTruck.position.addScaledVector(direction, moveSpeed);
   }
   if (keys.ArrowDown) {
     let direction = new THREE.Vector3();
-    myModel.getWorldDirection(direction);
-    myModel.position.addScaledVector(direction, -moveSpeed);
+    CyberTruck.getWorldDirection(direction);
+    CyberTruck.position.addScaledVector(direction, -moveSpeed);
   }
   if (keys.ArrowLeft && keys.ArrowUp) {
-    myModel.rotation.y += rotateSpeed;
+    CyberTruck.rotation.y += rotateSpeed;
   }
   if (keys.ArrowRight && keys.ArrowUp) {
-    myModel.rotation.y -= rotateSpeed;
+    CyberTruck.rotation.y -= rotateSpeed;
   }
   if (keys.ArrowRight && keys.ArrowDown) {
-    myModel.rotation.y += rotateSpeed;
+    CyberTruck.rotation.y += rotateSpeed;
   }
   if (keys.ArrowLeft && keys.ArrowDown) {
-    myModel.rotation.y -= rotateSpeed;
+    CyberTruck.rotation.y -= rotateSpeed;
   }
 }
 
 function animate() {
   requestAnimationFrame(animate);
 
-  if (myModel) {
+  if (CyberTruck) {
     updatemyModel();
 
     if (keys.Space) {
@@ -146,12 +146,12 @@ function animate() {
     }
 
     const rotatedOffset = cameraOffset.clone();
-    rotatedOffset.applyQuaternion(myModel.quaternion);
+    rotatedOffset.applyQuaternion(CyberTruck.quaternion);
 
-    const desiredPosition = myModel.position.clone().add(rotatedOffset);
+    const desiredPosition = CyberTruck.position.clone().add(rotatedOffset);
 
     camera.position.lerp(desiredPosition, 0.1);
-    camera.lookAt(myModel.position);
+    camera.lookAt(CyberTruck.position);
   }
 
   renderer.render(scene, camera);
