@@ -109,7 +109,7 @@ document.addEventListener('keyup', (event) => {
 const moveSpeed = 1;
 const rotateSpeed = 0.012;
 
-function updatemyModel() {
+function updateCyberTruck() {
   if (keys.ArrowUp) {
     let direction = new THREE.Vector3();
     CyberTruck.getWorldDirection(direction);
@@ -138,7 +138,7 @@ function animate() {
   requestAnimationFrame(animate);
 
   if (CyberTruck) {
-    updatemyModel();
+    updateCyberTruck();
 
     if (keys.Space) {
       console.log("SPACE");
