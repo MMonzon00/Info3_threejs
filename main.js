@@ -89,45 +89,6 @@ document.addEventListener('keydown', (event) => {
       }
     }
   });
-  
-  document.addEventListener('keyup', (event) => {
-    if (keys[event.key] !== undefined) {
-      keys[event.key] = false;
-    }
-  
-    if (event.key === ' ' || event.key === 'Spacebar') {
-      keys.Space = false;
-      cameraOffset = new THREE.Vector3(0, 20, 100);
-    }
-  });
-  
-  document.addEventListener('keyup', (event) => {
-    if (keys[event.key] !== undefined) {
-      keys[event.key] = false;
-    }
-  
-    if (event.key === ' ' || event.key === 'Spacebar') {
-      keys.Space = false;
-      cameraOffset = new THREE.Vector3(0, 20, 100);
-    }
-  });
-  
-  
-  document.addEventListener('keyup', (event) => {
-    if (keys[event.key] !== undefined) {
-      keys[event.key] = false;
-    }
-  
-    if (event.key === ' ' || event.key === 'Spacebar') {
-      keys.Space = false;
-      cameraOffset = new THREE.Vector3(0, 20, 100);
-    }
-  
-    if (event.key === 'c') {
-      keys.cPressed = false;
-      console.log("'c' key status:", keys.cPressed);
-    }
-  });
 
 document.addEventListener('keyup', (event) => {
   if (keys[event.key] !== undefined) {
@@ -136,7 +97,7 @@ document.addEventListener('keyup', (event) => {
 
   if (event.key === ' ' || event.key === 'Spacebar') {
     keys.Space = false;
-    cameraOffset = new THREE.Vector3(0, 20, 100);
+    cameraOffset = new THREE.Vector3(0, 20, -100);
   }
 
   if (event.key === 'c') {
@@ -181,7 +142,7 @@ function animate() {
 
     if (keys.Space) {
       console.log("SPACE");
-      cameraOffset = new THREE.Vector3(0, 4, -10);
+      cameraOffset = new THREE.Vector3(0, 20, 100);
     }
 
     const rotatedOffset = cameraOffset.clone();
