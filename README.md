@@ -51,18 +51,6 @@ Este proyecto utiliza Blender para modelar el CyberTruck y Three.js para integra
 - **`package.json`**: Archivo de configuración de Node.js y dependencias.
 - **`style.css`**: Estilos CSS para la aplicación.
 
-## Modelado del CyberTruck con Blender
-
-El modelo 3D del CyberTruck fue creado utilizando Blender. Los archivos resultantes se encuentran en el directorio `/models`. Si deseas realizar modificaciones al modelo, abre el archivo `.blend` en Blender y realiza las ediciones necesarias.
-
-## Integración con Three.js
-
-La integración del modelo en Three.js se realiza en el archivo `main.js`. Puedes explorar y modificar este archivo para adaptar la interactividad según tus necesidades.
-
-## Contribuciones
-
-¡Te animamos a contribuir al proyecto! Si tienes sugerencias, correcciones o nuevas características, sigue los pasos descritos en la sección de Contribuciones.
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - vea el archivo [LICENSE.md](LICENSE.md) para más detalles.
